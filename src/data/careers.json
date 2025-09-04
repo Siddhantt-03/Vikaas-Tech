@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "AI/Machine Learning Engineer",
+    "match": 95,
+    "description": "Develop cutting-edge AI solutions and machine learning models to solve complex problems.",
+    "industry": "Technology",
+    "averageSalary": "$120,000 - $180,000",
+    "requiredSkills": ["Python", "TensorFlow", "Statistics", "Deep Learning"],
+    "growthRate": "High",
+    "education": "Bachelor's in Computer Science or related field"
+  },
+  {
+    "id": 2,
+    "title": "UX/UI Designer",
+    "match": 88,
+    "description": "Create intuitive and beautiful user experiences for digital products.",
+    "industry": "Design & Technology",
+    "averageSalary": "$75,000 - $130,000",
+    "requiredSkills": ["Figma", "User Research", "Prototyping", "Design Systems"],
+    "growthRate": "High",
+    "education": "Bachelor's in Design or related field"
+  },
+  {
+    "id": 3,
+    "title": "Data Scientist",
+    "match": 92,
+    "description": "Extract insights from complex datasets to drive business decisions.",
+    "industry": "Analytics",
+    "averageSalary": "$95,000 - $160,000",
+    "requiredSkills": ["Python", "SQL", "Statistics", "Machine Learning"],
+    "growthRate": "Very High",
+    "education": "Master's in Data Science or related field"
+  },
+  {
+    "id": 4,
+    "title": "Product Manager",
+    "match": 85,
+    "description": "Lead cross-functional teams to deliver innovative products that users love.",
+    "industry": "Business & Technology",
+    "averageSalary": "$100,000 - $170,000",
+    "requiredSkills": ["Strategy", "Analytics", "Communication", "Agile"],
+    "growthRate": "High",
+    "education": "Bachelor's in Business or related field"
+  },
+  {
+    "id": 5,
+    "title": "Cybersecurity Analyst",
+    "match": 78,
+    "description": "Protect organizations from cyber threats and ensure data security.",
+    "industry": "Security & Technology",
+    "averageSalary": "$85,000 - $140,000",
+    "requiredSkills": ["Network Security", "Risk Assessment", "Incident Response"],
+    "growthRate": "Very High",
+    "education": "Bachelor's in Cybersecurity or related field"
+  }
+]

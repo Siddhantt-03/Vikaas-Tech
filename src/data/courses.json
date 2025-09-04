@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Machine Learning Specialization",
+    "provider": "Stanford University",
+    "duration": "3 months",
+    "difficulty": "Intermediate",
+    "rating": 4.8,
+    "price": "$49/month",
+    "topics": ["Supervised Learning", "Unsupervised Learning", "Neural Networks"],
+    "description": "Learn the fundamentals of machine learning and build real-world applications.",
+    "category": "Technology"
+  },
+  {
+    "id": 2,
+    "title": "UX Design Professional Certificate",
+    "provider": "Google Career Certificates",
+    "duration": "6 months",
+    "difficulty": "Beginner",
+    "rating": 4.7,
+    "price": "$39/month",
+    "topics": ["User Research", "Wireframing", "Prototyping", "Usability Testing"],
+    "description": "Master the fundamentals of UX design and prepare for entry-level roles.",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Data Science MicroMasters",
+    "provider": "MIT",
+    "duration": "8 months",
+    "difficulty": "Advanced",
+    "rating": 4.9,
+    "price": "$1,350",
+    "topics": ["Statistics", "Machine Learning", "Data Visualization", "Big Data"],
+    "description": "Graduate-level data science curriculum from MIT faculty.",
+    "category": "Analytics"
+  },
+  {
+    "id": 4,
+    "title": "Product Management Fundamentals",
+    "provider": "Product School",
+    "duration": "4 weeks",
+    "difficulty": "Beginner",
+    "rating": 4.6,
+    "price": "$2,999",
+    "topics": ["Product Strategy", "User Stories", "Analytics", "Go-to-Market"],
+    "description": "Learn the essential skills to become a successful product manager.",
+    "category": "Business"
+  },
+  {
+    "id": 5,
+    "title": "Cybersecurity Bootcamp",
+    "provider": "Cybrary",
+    "duration": "12 weeks",
+    "difficulty": "Intermediate",
+    "rating": 4.5,
+    "price": "$199/month",
+    "topics": ["Network Security", "Ethical Hacking", "Incident Response"],
+    "description": "Intensive cybersecurity training with hands-on labs.",
+    "category": "Security"
+  }
+]
