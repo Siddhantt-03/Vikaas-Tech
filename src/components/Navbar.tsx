@@ -1,12 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Compass, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -18,44 +19,80 @@ const Navbar = () => {
 
   const isActivePath = (path: string) => location.pathname === path;
 
+  // Scroll detection for dynamic navbar style
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-card/80 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-card">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/90 backdrop-blur-xl shadow-lg border-b border-border/50"
+          : "bg-transparent backdrop-blur-0"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="flex justify-between h-20 items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 transition-transform hover:scale-105">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <Compass className="h-5 w-5 text-white" />
-            </div>
-            <span className="font-bold text-xl text-foreground">CareerCompass</span>
+          <Link
+            to="/"
+            className="flex items-center space-x-3 transition-transform hover:scale-110"
+          >
+           <img 
+    src="/Career Compass.png" 
+    alt="Career Compass Logo" 
+    className="h-20 md:h-28 lg:h-32 object-contain"
+  />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 group ${
                   isActivePath(link.path)
-                    ? "text-primary bg-accent"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.name}
+                {/* underline animation */}
+                <span
+                  className={`absolute left-0 -bottom-1 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full ${
+                    isActivePath(link.path) ? "w-full" : ""
+                  }`}
+                />
               </Link>
             ))}
-            
-            <div className="flex items-center space-x-4">
+
+            <div className="flex items-center space-x-4 pl-6 border-l border-border/40">
               <Link to="/login">
-                <Button variant="outline" size="sm">Login</Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="rounded-full px-5 transition-transform hover:scale-105"
+                >
+                  Login
+                </Button>
               </Link>
               <Link to="/signup">
-                <Button variant="default" size="sm">Get Started</Button>
+                <Button
+                  size="sm"
+                  className="rounded-full px-5 shadow-md transition-transform hover:scale-105 hover:shadow-lg"
+                >
+                  Get Started
+                </Button>
               </Link>
-              <Avatar className="h-8 w-8">
+              <Avatar className="h-9 w-9 ring-2 ring-border/30 hover:ring-primary transition-all cursor-pointer">
                 <AvatarImage src="/avatar-placeholder.jpg" />
-                <AvatarFallback className="bg-primary text-primary-foreground">CC</AvatarFallback>
+                <AvatarFallback className="bg-primary text-primary-foreground">
+                  CC
+                </AvatarFallback>
               </Avatar>
             </div>
           </div>
@@ -65,6 +102,7 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="sm"
+              className="rounded-full"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -78,15 +116,15 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t border-border/40 animate-in fade-in slide-in-from-top-2 duration-300">
             <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActivePath(link.path)
-                      ? "text-primary bg-accent"
+                      ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -94,12 +132,23 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <div className="flex space-x-2 pt-2">
-                <Link to="/login">
-                  <Button variant="outline" size="sm" className="flex-1">Login</Button>
+              <div className="flex space-x-2 pt-3">
+                <Link to="/login" className="flex-1">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full rounded-full hover:scale-105"
+                  >
+                    Login
+                  </Button>
                 </Link>
-                <Link to="/signup">
-                  <Button variant="default" size="sm" className="flex-1">Get Started</Button>
+                <Link to="/signup" className="flex-1">
+                  <Button
+                    size="sm"
+                    className="w-full rounded-full shadow-md hover:scale-105 hover:shadow-lg"
+                  >
+                    Get Started
+                  </Button>
                 </Link>
               </div>
             </div>

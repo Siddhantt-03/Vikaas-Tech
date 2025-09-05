@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -95,25 +94,19 @@ const Assessment = () => {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   const handleAnswer = (optionIndex: number) => {
-    setAnswers({
-      ...answers,
-      [currentQuestion]: optionIndex
-    });
+    setAnswers({ ...answers, [currentQuestion]: optionIndex });
   };
 
   const handleNext = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      // Assessment complete - redirect to dashboard
-      window.location.href = "/dashboard";
+      window.location.href = "/dashboard"; // Completed
     }
   };
 
   const handlePrevious = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    }
+    if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
   };
 
   const isAnswered = answers[currentQuestion] !== undefined;
@@ -124,42 +117,49 @@ const Assessment = () => {
       <div className="max-w-3xl mx-auto">
         {/* Progress Header */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-3xl font-bold text-foreground">Career Assessment</h1>
+          <div className="flex items-center justify-between mb-2">
+            <div>
+              <h1 className="text-3xl font-bold text-foreground">Career Assessment</h1>
+              <p className="text-sm text-muted-foreground">
+                Answer each question honestly for better recommendations
+              </p>
+            </div>
             <span className="text-sm text-muted-foreground">
-              Question {currentQuestion + 1} of {questions.length}
+              {currentQuestion + 1}/{questions.length}
             </span>
           </div>
-          <Progress value={progress} className="h-2" />
+          <Progress value={progress} className="h-2 rounded-full" />
         </div>
 
+        {/* Question Card */}
         <Card className="bg-gradient-card shadow-elevation border-0">
-          <CardHeader className="pb-8">
-            <CardTitle className="text-2xl text-foreground">
+          <CardHeader className="pb-6">
+            <CardTitle className="text-2xl font-semibold text-foreground">
               {questions[currentQuestion].question}
             </CardTitle>
           </CardHeader>
-          
+
           <CardContent className="space-y-4">
             <div className="space-y-3">
-              {questions[currentQuestion].options.map((option, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswer(index)}
-                  className={`w-full p-4 text-left rounded-lg border-2 transition-all duration-200 ${
-                    answers[currentQuestion] === index
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border hover:border-primary/50 hover:bg-accent/50"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">{option}</span>
-                    {answers[currentQuestion] === index && (
-                      <CheckCircle className="h-5 w-5 text-primary" />
-                    )}
-                  </div>
-                </button>
-              ))}
+              {questions[currentQuestion].options.map((option, index) => {
+                const active = answers[currentQuestion] === index;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswer(index)}
+                    className={`w-full p-4 text-left rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40 ${
+                      active
+                        ? "border-primary bg-primary/10 text-primary shadow-sm"
+                        : "border-border hover:border-primary/50 hover:bg-accent/50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium">{option}</span>
+                      {active && <CheckCircle className="h-5 w-5 text-primary" />}
+                    </div>
+                  </button>
+                );
+              })}
             </div>
 
             {/* Navigation */}
@@ -173,7 +173,7 @@ const Assessment = () => {
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Previous
               </Button>
-              
+
               <Button
                 onClick={handleNext}
                 disabled={!isAnswered}
@@ -187,30 +187,27 @@ const Assessment = () => {
 
             {/* Help Text */}
             <p className="text-center text-sm text-muted-foreground mt-6">
-              {isLastQuestion 
+              {isLastQuestion
                 ? "Complete your assessment to receive personalized career recommendations"
-                : "Answer honestly - there are no right or wrong answers"
-              }
+                : "There are no right or wrong answers – choose what feels most like you"}
             </p>
           </CardContent>
         </Card>
 
-        {/* Progress Indicator */}
-        <div className="mt-8 text-center">
-          <div className="flex justify-center space-x-2">
-            {questions.map((_, index) => (
-              <div
-                key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === currentQuestion
-                    ? "bg-primary scale-125"
-                    : index < currentQuestion
-                    ? "bg-success"
-                    : "bg-muted"
-                }`}
-              />
-            ))}
-          </div>
+        {/* Progress Dots */}
+        <div className="mt-8 flex justify-center gap-2">
+          {questions.map((_, index) => (
+            <div
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                index === currentQuestion
+                  ? "bg-primary scale-125"
+                  : answers[index] !== undefined
+                  ? "bg-success/70"
+                  : "bg-muted"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </div>
