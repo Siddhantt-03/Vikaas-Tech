@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "title": "AI/Machine Learning Engineer",
+    "description": "Develop AI solutions and machine learning models for automation and insights.",
+    "industry": "Technology",
+    "averageSalary": "₹12,00,000 - ₹25,00,000",
+    "requiredSkills": ["Python", "TensorFlow", "Deep Learning", "Algorithms", "coding", "programming", "software", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech in Computer Science from IIT Bombay"
+  },
+  {
+    "id": 2,
+    "title": "UX/UI Designer",
+    "description": "Design intuitive and engaging digital products for web and mobile platforms.",
+    "industry": "Design",
+    "averageSalary": "₹6,00,000 - ₹15,00,000",
+    "requiredSkills": ["Figma", "User Research", "Wireframing", "Creativity", "design", "passion", "coding"],
+    "growthRate": "High",
+    "education": "Bachelor's in Design from NID Ahmedabad"
+  },
+  {
+    "id": 3,
+    "title": "Data Scientist",
+    "description": "Analyze data to uncover insights and drive decision making.",
+    "industry": "Data Analytics",
+    "averageSalary": "₹10,00,000 - ₹20,00,000",
+    "requiredSkills": ["Python", "Statistics", "Machine Learning", "SQL", "coding", "programming", "data", "analysis", "passion"],
+    "growthRate": "Very High",
+    "education": "M.Sc in Data Science from IISc Bangalore"
+  },
+  {
+    "id": 4,
+    "title": "Cybersecurity Analyst",
+    "description": "Safeguard organizational data and protect systems from cyber threats.",
+    "industry": "Security",
+    "averageSalary": "₹8,00,000 - ₹18,00,000",
+    "requiredSkills": ["Network Security", "Risk Assessment", "Incident Response", "security", "software", "passion", "coding"],
+    "growthRate": "Very High",
+    "education": "Bachelor's in Cybersecurity from IIIT Hyderabad"
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "description": "Automate and streamline development and IT processes.",
+    "industry": "Software Engineering",
+    "averageSalary": "₹9,00,000 - ₹20,00,000",
+    "requiredSkills": ["CI/CD", "Docker", "Linux", "Automation", "coding", "programming", "software", "passion"],
+    "growthRate": "High",
+    "education": "B.E. Computer Engineering from PES University"
+  },
+  {
+    "id": 6,
+    "title": "Cloud Solutions Architect",
+    "description": "Design cloud infrastructure and deployment pipelines.",
+    "industry": "Technology",
+    "averageSalary": "₹12,00,000 - ₹25,00,000",
+    "requiredSkills": ["AWS", "Azure", "Cloud Security", "Kubernetes", "cloud", "software", "coding", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech in IT from BIT Mesra"
+  },
+  {
+    "id": 7,
+    "title": "Full Stack Developer",
+    "description": "Build modern web applications from frontend to backend.",
+    "industry": "Software Development",
+    "averageSalary": "₹6,50,000 - ₹18,00,000",
+    "requiredSkills": ["JavaScript", "React", "Node.js", "APIs", "coding", "software", "programming", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech in Computer Science from VIT Vellore"
+  },
+  {
+    "id": 8,
+    "title": "Mobile App Developer",
+    "description": "Develop native and cross-platform apps for iOS and Android.",
+    "industry": "Mobile Development",
+    "averageSalary": "₹5,50,000 - ₹14,00,000",
+    "requiredSkills": ["Kotlin", "Swift", "React Native", "UX/UI", "coding", "programming", "software", "passion"],
+    "growthRate": "Medium",
+    "education": "B.Sc in Software Engineering from Symbiosis Institute"
+  },
+  {
+    "id": 9,
+    "title": "Product Manager",
+    "description": "Lead the development and launch of innovative tech products.",
+    "industry": "Product",
+    "averageSalary": "₹12,00,000 - ₹30,00,000",
+    "requiredSkills": ["Strategy", "Market Research", "Leadership", "Agile", "communication", "planning", "passion"],
+    "growthRate": "High",
+    "education": "MBA from IIM Ahmedabad"
+  },
+  {
+    "id": 10,
+    "title": "Digital Marketing Specialist",
+    "description": "Plan and execute online marketing strategies across channels.",
+    "industry": "Marketing",
+    "averageSalary": "₹4,50,000 - ₹10,00,000",
+    "requiredSkills": ["SEO", "Content Creation", "Analytics", "Google Ads", "marketing", "communication", "passion"],
+    "growthRate": "Medium",
+    "education": "Bachelor's in Marketing from NMIMS"
+  },
+  {
+    "id": 11,
+    "title": "Technical Writer",
+    "description": "Document complex technical concepts for end users and engineers.",
+    "industry": "Publishing",
+    "averageSalary": "₹3,50,000 - ₹7,00,000",
+    "requiredSkills": ["Writing", "Technical Knowledge", "Editing", "communication", "passion"],
+    "growthRate": "Low",
+    "education": "Bachelor's in English from Delhi University"
+  },
+  {
+    "id": 12,
+    "title": "Robotics Engineer",
+    "description": "Design, build, and test automated robotic systems.",
+    "industry": "Robotics",
+    "averageSalary": "₹6,00,000 - ₹15,00,000",
+    "requiredSkills": ["C++", "Embedded Systems", "Mechanics", "coding", "software", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech in Mechanical Engineering from NIT Trichy"
+  },
+  {
+    "id": 13,
+    "title": "Network Engineer",
+    "description": "Maintain computer networks and solve networking issues.",
+    "industry": "Networking",
+    "averageSalary": "₹5,00,000 - ₹12,00,000",
+    "requiredSkills": ["Cisco", "Firewall", "Network Security", "Troubleshooting", "software", "coding", "passion"],
+    "growthRate": "Medium",
+    "education": "B.E. in Information Technology from IIIT Bangalore"
+  },
+  {
+    "id": 14,
+    "title": "Business Analyst",
+    "description": "Bridge between business needs and technology solutions.",
+    "industry": "Business",
+    "averageSalary": "₹5,50,000 - ₹14,00,000",
+    "requiredSkills": ["Data Analysis", "Communication", "Process Modeling", "planning", "analysis", "passion"],
+    "growthRate": "Medium",
+    "education": "MBA from XLRI Jamshedpur"
+  },
+  {
+    "id": 15,
+    "title": "Graphic Designer",
+    "description": "Design impactful graphics for web and print media.",
+    "industry": "Design",
+    "averageSalary": "₹3,50,000 - ₹8,00,000",
+    "requiredSkills": ["Illustrator", "Photoshop", "Creativity", "branding", "design", "passion"],
+    "growthRate": "Low",
+    "education": "Bachelor's in Graphic Design from Srishti Institute"
+  },
+  {
+    "id": 16,
+    "title": "Frontend Developer",
+    "description": "Create interactive and responsive UI components.",
+    "industry": "Web Development",
+    "averageSalary": "₹5,50,000 - ₹15,00,000",
+    "requiredSkills": ["HTML", "CSS", "JavaScript", "React", "coding", "software", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech in Computer Science from UPES"
+  },
+  {
+    "id": 17,
+    "title": "Systems Administrator",
+    "description": "Maintain servers and enterprise IT infrastructure.",
+    "industry": "IT Administration",
+    "averageSalary": "₹4,00,000 - ₹9,00,000",
+    "requiredSkills": ["Linux", "Windows Server", "Shell Scripting", "software", "passion"],
+    "growthRate": "Medium",
+    "education": "B.E. in Information Systems from Amity University"
+  },
+  {
+    "id": 18,
+    "title": "QA Engineer",
+    "description": "Develop testing frameworks for software quality assurance.",
+    "industry": "Software Testing",
+    "averageSalary": "₹4,50,000 - ₹12,00,000",
+    "requiredSkills": ["Automation", "Selenium", "Bug Tracking", "coding", "software", "passion"],
+    "growthRate": "Medium",
+    "education": "B.Tech from Manipal Institute of Technology"
+  },
+  {
+    "id": 19,
+    "title": "Healthcare Data Analyst",
+    "description": "Analyze healthcare data to improve patient outcomes.",
+    "industry": "Healthcare Analytics",
+    "averageSalary": "₹6,50,000 - ₹16,00,000",
+    "requiredSkills": ["R", "SQL", "Healthcare Regulations", "data", "analysis", "passion"],
+    "growthRate": "High",
+    "education": "M.Sc in Health Informatics from JIPMER"
+  },
+  {
+    "id": 20,
+    "title": "E-commerce Manager",
+    "description": "Drive online retail operations and strategy.",
+    "industry": "E-commerce",
+    "averageSalary": "₹8,00,000 - ₹20,00,000",
+    "requiredSkills": ["Shopify", "Digital Marketing", "Data Analysis", "Logistics", "management", "passion"],
+    "growthRate": "Medium",
+    "education": "MBA from IIFT Delhi"
+  },
+  {
+    "id": 21,
+    "title": "AI Research Scientist",
+    "description": "Conduct foundational AI research and develop novel algorithms.",
+    "industry": "Research",
+    "averageSalary": "₹15,00,000 - ₹30,00,000",
+    "requiredSkills": ["Mathematics", "Python", "Machine Learning", "Research", "coding", "passion"],
+    "growthRate": "High",
+    "education": "PhD in Computer Science from IIT Madras"
+  },
+  {
+    "id": 22,
+    "title": "Cloud Developer",
+    "description": "Build scalable cloud-native applications and microservices.",
+    "industry": "Cloud Computing",
+    "averageSalary": "₹9,00,000 - ₹20,00,000",
+    "requiredSkills": ["AWS", "Azure", "Docker", "Kubernetes", "cloud", "software", "coding", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech IT from IIIT Hyderabad"
+  },
+  {
+    "id": 23,
+    "title": "Blockchain Developer",
+    "description": "Design and develop blockchain-based applications and smart contracts.",
+    "industry": "Blockchain",
+    "averageSalary": "₹10,00,000 - ₹22,00,000",
+    "requiredSkills": ["Ethereum", "Solidity", "Cryptography", "coding", "software", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech Computer Science from NIT Warangal"
+  },
+  {
+    "id": 24,
+    "title": "Game Developer",
+    "description": "Create interactive 3D and 2D games for multiple platforms.",
+    "industry": "Gaming",
+    "averageSalary": "₹5,00,000 - ₹15,00,000",
+    "requiredSkills": ["Unity", "C#", "3D Modeling", "coding", "software", "passion"],
+    "growthRate": "Medium",
+    "education": "Bachelor's in Game Design from DSK International"
+  },
+  {
+    "id": 25,
+    "title": "SEO Specialist",
+    "description": "Optimize websites to rank higher on search engines.",
+    "industry": "Digital Marketing",
+    "averageSalary": "₹4,00,000 - ₹8,00,000",
+    "requiredSkills": ["SEO", "Google Analytics", "Content Marketing", "marketing", "passion"],
+    "growthRate": "Medium",
+    "education": "Bachelor's in Marketing from Christ University"
+  },
+  {
+    "id": 26,
+    "title": "Network Security Engineer",
+    "description": "Monitor and secure enterprise network infrastructure.",
+    "industry": "Security",
+    "averageSalary": "₹7,00,000 - ₹15,00,000",
+    "requiredSkills": ["Firewalls", "IDS/IPS", "VPN", "Risk Assessment", "security", "passion"],
+    "growthRate": "High",
+    "education": "B.Tech in Information Security from Amrita Vishwa Vidyapeetham"
+  },
+  {
+    "id": 27,
+    "title": "Data Engineer",
+    "description": "Build and maintain data pipelines and infrastructure.",
+    "industry": "Data Analytics",
+    "averageSalary": "₹8,00,000 - ₹18,00,000",
+    "requiredSkills": ["Spark", "Hadoop", "SQL", "Python", "coding", "software", "passion"],
+    "growthRate": "Very High",
+    "education": "M.Tech in Computer Science from IIT Kharagpur"
+  },
+  {
+    "id": 28,
+    "title": "Technical Support Engineer",
+    "description": "Provide IT support and troubleshoot technical issues.",
+    "industry": "IT Support",
+    "averageSalary": "₹3,00,000 - ₹6,00,000",
+    "requiredSkills": ["Customer Service", "Linux", "Windows OS", "communication", "passion"],
+    "growthRate": "Medium",
+    "education": "Diploma in Computer Science from NIIT"
+  },
+  {
+    "id": 29,
+    "title": "Mobile UX Designer",
+    "description": "Design seamless user experiences for mobile apps.",
+    "industry": "Design",
+    "averageSalary": "₹5,00,000 - ₹12,00,000",
+    "requiredSkills": ["Sketch", "Adobe XD", "User Research", "design", "passion"],
+    "growthRate": "Medium",
+    "education": "Bachelor's in Design from Pearl Academy"
+  },
+  {
+    "id": 30,
+    "title": "Big Data Analyst",
+    "description": "Analyze large datasets to derive business insights.",
+    "industry": "Data Analytics",
+    "averageSalary": "₹7,00,000 - ₹18,00,000",
+    "requiredSkills": ["Hadoop", "Spark", "Python", "SQL", "coding", "data", "passion"],
+    "growthRate": "High",
+    "education": "M.Sc in Big Data from IIIT Delhi"
+  }
+]

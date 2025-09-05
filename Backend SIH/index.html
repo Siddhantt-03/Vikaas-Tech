@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Career Compass</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      background-color: #f9fafb;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 100px;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      font-size: 16px;
+      color: white;
+      background-color: #4a90e2;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #357abd;
+    }
+    .results {
+      margin-top: 30px;
+      max-width: 800px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .item {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+      margin-bottom: 15px;
+    }
+    .item h3 {
+      margin: 0 0 8px 0;
+      color: #2c3e50;
+    }
+    .item p {
+      margin: 4px 0;
+      color: #555;
+    }
+    .label {
+      font-weight: 600;
+      color: #4a90e2;
+    }
+    .error {
+      color: #e74c3c;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Career Compass</h1>
+  <p>Enter your interests or skills below and click "Get Recommendations".</p>
+
+  <textarea id="inputText" placeholder="For example: I like AI, web development, and data analysis..."></textarea>
+  <br />
+  <button onclick="getRecommendations()">Get Recommendations</button>
+
+  <div id="error" class="error"></div>
+
+  <div class="results" id="results" style="display:none;">
+    <div class="section" id="careersSection">
+      <h2>Recommended Careers</h2>
+      <div id="careersList"></div>
+    </div>
+
+    <div class="section" id="coursesSection">
+      <h2>Recommended Courses</h2>
+      <div id="coursesList"></div>
+    </div>
+  </div>
+
+  <script>
+    async function getRecommendations() {
+      const errorDiv = document.getElementById('error');
+      const resultsDiv = document.getElementById('results');
+      const careersList = document.getElementById('careersList');
+      const coursesList = document.getElementById('coursesList');
+      errorDiv.textContent = '';
+      resultsDiv.style.display = 'none';
+      careersList.innerHTML = '';
+      coursesList.innerHTML = '';
+
+      const text = document.getElementById('inputText').value.trim();
+      if (!text) {
+        errorDiv.textContent = 'Please enter your interests or skills to get recommendations.';
+        return;
+      }
+
+      try {
+        const response = await fetch('http://127.0.0.1:5000/api/recommend', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text }),
+        });
+
+        if (!response.ok) throw new Error(`Server responded with ${response.status}`);
+
+        const data = await response.json();
+
+        if (data.careers.length === 0 && data.courses.length === 0) {
+          errorDiv.textContent = 'No recommendations found for your input, please try different keywords.';
+          return;
+        }
+
+        // Populate careers
+        data.careers.forEach(career => {
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.innerHTML = `
+            <h3>${career.title} <small style="color:#888;">[${career.averageSalary}]</small></h3>
+            <p><span class="label">Industry:</span> ${career.industry}</p>
+            <p><span class="label">Skills:</span> ${career.requiredSkills.join(', ')}</p>
+            <p><span class="label">Education:</span> ${career.education}</p>
+            <p>${career.description}</p>
+          `;
+          careersList.appendChild(item);
+        });
+
+        // Populate courses
+        data.courses.forEach(course => {
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.innerHTML = `
+            <h3>${course.title} <small style="color:#888;">by ${course.provider} (${course.price})</small></h3>
+            <p><span class="label">Topics:</span> ${course.topics.join(', ')}</p>
+            <p><span class="label">Duration:</span> ${course.duration}</p>
+            <p>${course.description}</p>
+          `;
+          coursesList.appendChild(item);
+        });
+
+        resultsDiv.style.display = 'block';
+      } catch (error) {
+        errorDiv.textContent = `Error: ${error.message}`;
+      }
+    }
+  </script>
+</body>
+</html>
